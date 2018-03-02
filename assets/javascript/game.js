@@ -4,7 +4,8 @@ function show(elementId) {
   document.getElementById("loseScreen").style.display="none";
   document.getElementById("winScreen").style.display="none";
   document.getElementById(elementId).style.display="block";
-}  
+}
+
 // variables - global
 var winsCounter = (0);
 var lossesCounter = (0);
@@ -15,18 +16,23 @@ var chosenWord = [];
 var underScore = [];
 var guess;
 var wrongLetter = [];
-var playing = true
+var rightLetter =[];
+var playing = false
+
+function firstPlay() {
+  playing = true;
+} 
 
 // start Game parameters
 function startGame() { 
-  console.log(chosenWord);
-  console.log(underScore)
-  console.log(guessesLeft);
+  if (playing = false) {
+    return;
+  } else {  
   document.getElementById("winsCounter").innerHTML = winsCounter;
   document.getElementById("lossesCounter").innerHTML = lossesCounter;
   document.getElementById("guessesLeft").innerHTML = guessesLeft;
   document.getElementById("notLetter").innerHTML = "Press a Letter to Begin"
-}
+
 
 // choses word from word option array //
 randWord = Math.floor(Math.random() * wordBank.length);
@@ -97,7 +103,7 @@ document.onkeyup = function(keyPressed) {
   }
   
   // guess was wrong and you still have lives remaing
-  if(chosenWord.indexOf(guess) <= -1) {
+  if(chosenWord.indexOf(guess) <= -1 && wrongLetter.indexOf(guess) <= -1) {
     guessesLeft--;
     wrongLetter.push(guess);
     document.getElementById("notLetter").innerHTML = wrongLetter.join(" ")
@@ -119,7 +125,7 @@ document.onkeyup = function(keyPressed) {
     document.getElementById("hangmanGame").style.display="none";
     document.getElementById("loseScreen").style.display="block";
   } 
-}       
-                 
-}              
-startGame();
+}                        
+} 
+}             
+}

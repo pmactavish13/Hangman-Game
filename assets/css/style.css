@@ -83,3 +83,12 @@ h5 {
 #reset {
     margin-top: 30px;
     }    
+
+.canvas{
+        color: #0c0d57; 
+        background-image: url("../images/hangman.jpg");
+        -webkit-background-image: url("../images/hangman.jpg");
+        border: #0c0d57 6px solid;;
+        width: 100%;
+        height: 100%;
+      }    

@@ -1,0 +1,85 @@
+body
+ {
+    background: url("../images/spiderweb.jpg");
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    margin:30px 120px 30px 100px;
+    }
+
+/* .splashScreen  */
+#splashScreen, #winScreen, #loseScreen {
+    width: 100%;
+    height: 100%;
+    top: 25%;
+    text-align: center;
+    position: fixed;
+}
+
+.hangman {
+    border: #0c0d57 6px solid;
+    background-color: rgb(215, 227, 252);
+    margin-right: 250px;
+    margin-left: 50px;
+}
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+}
+
+#startBtn {
+    margin-top: 30px;
+    }
+
+/* some splashScreen - all main game */
+
+h1, h2, h3, h4, h5, p{
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    font-weight: 700;
+    color: #0c0d57;
+    }
+
+
+#page-header {
+    border: #0c0d57 6px solid;
+    background-color: rgb(215, 227, 252);
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 25px;
+    }
+
+#wrong-header{
+    margin-bottom: -5px;
+    margin-top: -5px;
+}
+.panel, #drawhangman {
+    border: #0c0d57 6px solid;
+    background-color: rgb(215, 227, 252);
+    padding: -5px;
+    }
+
+h2 {
+    font-size: 36px;
+    text-align: center;
+    padding: 10px;
+    }
+
+h3 {
+    font-size: 28px;
+    text-align: center;
+} 
+
+h4, p {
+    font-size: 22px;
+    text-align: center;
+   
+    }
+
+h5 {
+    font-size: 20px;
+    text-align: center;
+    /* margin: 10px; */
+    }
+
+#reset {
+    margin-top: 30px;
+    }    

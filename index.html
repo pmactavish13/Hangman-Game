@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>hangman</title>
+    <title>hangman-2</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -13,69 +13,103 @@
 
 <body>
 <!-- Start Screen -->
-<div id="splashScreen">
-    <h1>HANGMAN</h1>
-    <button type="button" onclick="show('hangmanGame');">Press to Start Game</button> 
+<div id="container">
+    <div id="splashScreen">
+        <div class="hangman" id="intro">
+            <h1>HANGMAN</h1>
+            <h2>Weather Phenomenon</h2>
+        </div>
+        <button type="button" class="hangman" id="startBtn" onclick="show('hangmanGame'); startGame()">
+            <h2>Press to Start Game</h2>
+        </button> 
+    </div>
+<div>
+
+<!-- Main Screen -->
+<div id="container2">
+    <div id="hangmanGame" style="display:none">
+        <div id="page-header">
+            <h2>Hangman - Guess the Weather Phenomenon</h2>
+        </div>
+   
+        <div class="row">
+            <div class="col-xs-6 col-md-7">
+                <canvas id="drawhangman" width="100%" height="100%"></canvas>
+            </div>
+
+            <div class="col-xs-6 col-md-5">
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h3><span id="underScore">_ _ _ </span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h4 id="wrong-head">Incorrectly Guessed Letters</h4>
+                            <p id="notLetter"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h5>Guesses Remaining = <span id="guessesLeft"></span></h5>
+                        </div>
+                    </div>  
+                </div>             
+            </div>    
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 col-md-3"> 
+            </div>
+            <div class="col-xs-6 col-md-3"> 
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h5>Wins = <span id="winsCounter"></span></h5>
+                    </div>
+                </div>
+            </div>    
+            <div class="col-xs-4 col-md-3"> 
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h5>Losses = <span id="lossesCounter"></span></h5>
+                    </div>
+                </div> 
+            </div>    
+        </div>
+
+    </div>
 </div>
-
-<!-- Main Game Screen -->
-<div id="hangmanGame" style="display:none">
-    <div class="page-header">
-        <h1>Hangman</h1>
-    </div>
-
-    <div class="panel panel-default">
-        <div class="panel-body">
-           <h2 class="underScore">_ _ _ </h2>
-        </div>
-    </div>
-
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <h3>Incorrectly Guessed Letters</h3>
-        </div>
-        <div class="panel-body">
-            <h3> <span class="wrongLetter"></span>
-            </h3>
-        </div>
-    </div>
-    
-
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <h3>Guesses Remaining = <span id="guessesLeft"></span>
-            </h3>
-        </div>
-    </div>
-
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <h3>Wins = <span id="wins"></span>
-            </h3>
-        </div>
-    </div>
-
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <h3>Losses = <span id="losses"></span>
-            </h3>
-        </div>
-    </div>  
-</div> 
 
 <!-- Win Screen -->
-<div id="winScreen" style="display:none">
-    <h1>YOU WON!!!</h1>
-    <button id="reset" type="button" onclick="show('hangmanGame');">Play Again</button> 
-</div>
-  
-<!-- Start Screen -->
-<div id="loseScreen" style="display:none">
-    <h1>YOU LOST!!!</h1>
-    <button id="reset" type="button" onclick="show('hangmanGame');">Try Again</button> 
+<div id="container3">
+    <div id="winScreen" style="display:none">
+        <div class="hangman">
+            <h1>YOU WON!!!</h1>
+        </div>
+        <button class="hangman" id="reset" type="button" onclick="show('hangmanGame'); startGame()">
+            <h2>Play Again</h2>
+        </button> 
     </div>
+</div> 
 
-     
+<!-- Lose Screen -->
+<div id="container4">
+    <div id="loseScreen" style="display:none">
+        <div class="hangman">
+            <h1>YOU LOST!!!</h1>
+            <h2>The Correct Answer was <span id="correct"></span></h2>
+        </div>
+        <button class="hangman" id="reset" type="button" onclick="show('hangmanGame'); startGame()">
+            <h2>Try Again</h2>
+        </button> 
+    </div>
+</div>                  
+
 <script src="assets/javascript/game.js"></script>
 </body>
 </html>
